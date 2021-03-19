@@ -1,0 +1,9 @@
+name : go-terratest
+author : amitkumardube@gmail.com
+description : Terratest action file for CI/CD
+inputs:
+  TerraformDir:
+    description : Terraform config files directory
+    required : true
+runs:
+  using: 
