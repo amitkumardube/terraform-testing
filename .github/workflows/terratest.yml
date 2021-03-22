@@ -34,9 +34,12 @@ jobs:
           go-version: 1.16
       # Test the terraform code using terratest 
       - name: terratest-testing
-        run : go test -v ./terratest
+        run :
+          cd terratest
+          go test -v .
+          cd ..
       # Provision the infra
       - name: provision-infra
         run : 
-        - terraform init
-        - terraform apply -auto-approve
+          terraform init
+          terraform apply -auto-approve
