@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     env : 
       GOOGLE_APPLICATION_CREDENTIALS: "my-first-project-298218-7e25767dcc93.json"
-      terraform_wrapper : false
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,6 +35,8 @@ jobs:
       # Setting terraform to use terraform CLI
       - id : setup-terraform
         uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: false
       # Setting go to use golang testing environment
       - name: Set up Go
         uses: actions/setup-go@v2
