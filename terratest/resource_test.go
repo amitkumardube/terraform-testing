@@ -13,7 +13,7 @@ func TestResource(t *testing.T) {
 		// the path of the directory where terraform config files are located.
 		TerraformDir: "../",
 		// the path of var files having values of test environment. The path is relative to Directory path above
-		VarFiles: []string{"variable_test.tfvars"},
+		VarFiles: []string{"terraform_test.tfvars"},
 
 		/*         // Variables to pass to our Terraform code using -var options
 		    Vars: map[string]interface{}{
