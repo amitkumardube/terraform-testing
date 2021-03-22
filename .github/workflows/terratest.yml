@@ -1,6 +1,6 @@
-# This is a basic workflow to help you get started with Actions
+# This is a workflow to test terraform code using terratest
 
-name: CI
+name: terratest
 
 # Controls when the action will run. 
 on:
@@ -24,13 +24,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Setting terraform to use terraform CLI
+      - id : setup-terraform
+        uses: hashicorp/setup-terraform@v1
+      # Setting go to use golang testing environment
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
+      # Test the terraform code using terratest 
+      - name: terratest-testing
+        run : go test -v ./terratest
+      # Provision the infra
+      - name: provision-infra
+        run : 
+        - terraform init
+        - terraform apply -auto-approve
