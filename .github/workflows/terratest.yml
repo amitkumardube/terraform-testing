@@ -48,6 +48,6 @@ jobs:
           go test -v ./terratest
       # Provision the infra
       - name: provision-infra
-        run : 
+        run : |
           terraform init
           terraform apply -auto-approve
