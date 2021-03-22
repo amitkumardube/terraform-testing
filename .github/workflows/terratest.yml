@@ -35,9 +35,7 @@ jobs:
       # Test the terraform code using terratest 
       - name: terratest-testing
         run :
-          cd terratest
-          go test -v .
-          cd ..
+          go test -v ./terratest
       # Provision the infra
       - name: provision-infra
         run : 
