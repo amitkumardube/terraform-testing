@@ -30,7 +30,7 @@ jobs:
         name : setup service account file
         run : |- 
           cat > my-first-project-298218-7e25767dcc93.json <<-EOF
-            ${{ secrets.SA_DEV }}
+            ${{ secrets.SA_KEY }}
           EOF
       - id : display-config
         run : cat my-first-project-298218-7e25767dcc93.json
