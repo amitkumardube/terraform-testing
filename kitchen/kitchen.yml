@@ -1,8 +1,6 @@
 ---
 driver:
   name: terraform
-  variable_files:
-    - ./../terraform_test.tfvars
   root_module_directory: test/fixtures/default
 provisioner:
   name: terraform

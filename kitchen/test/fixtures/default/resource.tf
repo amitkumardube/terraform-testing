@@ -1,31 +1,9 @@
 // we are trying to create a bigquery dataset
 
-resource "google_bigquery_dataset" "dataset" {
-  dataset_id                  = var.bucket_name
-  friendly_name               = "test"
-  description                 = "This is a test description"
-  location                    = "EU"
-  default_table_expiration_ms = 3600000
+// Calling the base rool module code to ensure that we are close the real infra 
 
-  labels = {
-    env = "default"
-  }
-
-  access {
-    role          = "OWNER"
-    user_by_email = google_service_account.bqowner.email
-  }
-
-  access {
-    role   = "READER"
-    domain = "hashicorp.com"
-  }
-}
-
-resource "google_service_account" "bqowner" {
-  account_id = var.account_name
-}
-
-data "google_service_account" "bqowner" {
-  account_id = var.account_name
+module "bigquery_svc_account" {
+  source = "../../../../"
+  bucket_name = var.bucket_name
+  account_name = var.account_name
 }

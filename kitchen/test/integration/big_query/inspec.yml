@@ -1,4 +1,4 @@
-name: simple_project
+name: big_query
 depends:
   - name: inspec-gcp
     git: https://github.com/inspec/inspec-gcp.git

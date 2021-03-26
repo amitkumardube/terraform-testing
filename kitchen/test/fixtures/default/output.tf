@@ -3,5 +3,5 @@ output "project_id" {
 }
 
 output "account_name" {
-    value = data.google_service_account.bqowner.email
+    value = module.bigquery_svc_account.sa_email
 }

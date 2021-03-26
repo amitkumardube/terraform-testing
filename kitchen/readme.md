@@ -1,3 +1,2 @@
-# Kitchen tests with Terraform
+# Kitchen tests with kitchen terraform
 
-- Doing kitchen test with Terraform

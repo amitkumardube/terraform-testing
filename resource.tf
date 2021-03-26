@@ -1,5 +1,9 @@
 // we are trying to create a bigquery dataset
 
+data "google_service_account" "bqowner" {
+  account_id = var.account_name
+}
+
 resource "google_bigquery_dataset" "dataset" {
   dataset_id                  = var.bucket_name
   friendly_name               = "test"
