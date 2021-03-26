@@ -27,7 +27,7 @@ suites:
         - name: inspec-gcp
           backend: gcp
           controls:
-            - test
+            - gcp
         - name: local
           backend: local
           controls:

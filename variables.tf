@@ -1,6 +1,6 @@
-variable "bucket_name" {
+variable "bigquery_dataset_name" {
     type = string
-    description = "name of the bucket to store the state file"
+    description = "name of the big query dataset"
 }
 
 variable "account_name" {

@@ -4,7 +4,7 @@ depends:
     git: https://github.com/inspec/inspec-gcp.git
     tag: v1.8.0
 inputs:
-  - name: bucket_name
+  - name: dataset_name
     required: true
     type: string
   - name: account_name

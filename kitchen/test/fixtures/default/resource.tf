@@ -4,6 +4,6 @@
 
 module "bigquery_svc_account" {
   source = "../../../../"
-  bucket_name = var.bucket_name
+  bigquery_dataset_name = var.bigquery_dataset_name
   account_name = var.account_name
 }

@@ -1,2 +1,2 @@
-bucket_name = "example_bucket"
+bigquery_dataset_name = "example_dataset"
 account_name = "bqowner"

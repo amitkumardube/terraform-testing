@@ -5,7 +5,7 @@ data "google_service_account" "bqowner" {
 }
 
 resource "google_bigquery_dataset" "dataset" {
-  dataset_id                  = var.bucket_name
+  dataset_id                  = var.bigquery_dataset_name
   friendly_name               = "test"
   description                 = "This is a test description"
   location                    = "EU"
