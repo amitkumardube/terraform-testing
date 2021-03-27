@@ -3,7 +3,6 @@ account_name = input('account_name')
 project_id = input('project_id')
 
 control "gcp" do
-describe.one do
   title "Google Cloud configuration"
 
   describe google_service_account(
@@ -18,5 +17,4 @@ describe.one do
   ) do
     it { should exist }
   end
-end
 end
