@@ -12,10 +12,9 @@ RUN bundle install
 
 # Adding Terraform to the image as kitchen requires terraform CLI to work
 ADD https://releases.hashicorp.com/terraform/${terraform_cli_version}/terraform_${terraform_cli_version}_linux_amd64.zip .
+
 # Unzipping the zip terraform binary file
 RUN unzip terraform_${terraform_cli_version}_linux_amd64.zip -d /usr/local/bin
+
 # Removing the compressed file
 RUN rm terraform_${terraform_cli_version}_linux_amd64.zip
-
-CMD [ "terraform" ]
-
