@@ -33,6 +33,9 @@ jobs:
           cat > my-first-project-298218-7e25767dcc93.json <<-EOF
             ${{ secrets.SA_KEY }}
           EOF
+      # copying service account file to test directory
+      - id : copy-json-file
+        run : cp my-first-project-298218-7e25767dcc93.json ./kitchen/test/fixtures/default/
       # Run Kitchen tests 
       - name: kitchen-testing
         run : |
