@@ -34,8 +34,9 @@ jobs:
             ${{ secrets.SA_KEY }}
           EOF
       # Run Kitchen tests 
-      - name: terratest-testing
+      - name: kitchen-testing
         run : |
+          cd kitchen
           kitchen create
           kitchen converge
           kitchen list
