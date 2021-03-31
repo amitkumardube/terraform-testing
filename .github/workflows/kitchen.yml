@@ -43,7 +43,6 @@ jobs:
       # Run Kitchen tests 
       - name: kitchen-testing
         run : |
-          cd kitchen
           kitchen create
           kitchen converge
           kitchen list
@@ -52,6 +51,5 @@ jobs:
       - name: kitchen-destroy
         if: ${{ always() }}
         run : |
-          cd kitchen
           kitchen destroy
                   
