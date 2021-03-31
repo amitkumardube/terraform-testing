@@ -39,7 +39,7 @@ jobs:
       # setup gcloud in the image so that we can use with local controller
       - uses: google-github-actions/setup-gcloud@master
         with:
-          service_account_key: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
+          service_account_key: ${{ secrets.SA_KEY }}
       # Run Kitchen tests 
       - name: kitchen-testing
         run : |
