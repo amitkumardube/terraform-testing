@@ -51,5 +51,7 @@ jobs:
       # Run kitchen destroy. This needs to be run even if earlier actions failed
       - name: kitchen-destroy
         if: ${{ always() }}
-        run : kitchen destroy
+        run : |
+          cd kitchen
+          kitchen destroy
                   
