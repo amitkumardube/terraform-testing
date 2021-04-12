@@ -56,4 +56,11 @@ jobs:
         run : |
           cd kitchen
           kitchen destroy
-                  
+      # Now calling another workflow from this workflow
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          repository: amitkumardube/kitchen-terraform
+          event-type: kitchen-terraform
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
