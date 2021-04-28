@@ -8,6 +8,7 @@ Kitchen Command | Terraform Command
 --- | ---
 kitchen create | terrafrom init
 kitchen converge | terrafrom apply with auto approve
+kitchen verify | Verify the test cases using inspec. The test cases are written in ruby.
 kitchen destroy | terraform destroy
 
 Documentation for all the resources available  with gcp backend type
