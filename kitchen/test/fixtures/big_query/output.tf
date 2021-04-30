@@ -7,7 +7,7 @@ output "account_name" {
 }
 
 output "dataset_name" {
-  value = module.bigquery_svc_account.dataset_id
+  value = var.bigquery_dataset_name
 }
 
 output "bucket_name" {
