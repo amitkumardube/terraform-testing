@@ -48,19 +48,3 @@ resource "google_storage_bucket" "uat_bucket" {
 resource "google_service_account" "bqowner" {
   account_id = var.account_name
 }
-
-resource "google_secret_manager_secret" "secret_basic" {
-  secret_id = "secret-test"
-
-  labels = {
-    label = "my-label"
-  }
-
-  replication {
-    user_managed {
-    replicas {
-        location = "us-east1"
-      }
-    }
-  }
-}
