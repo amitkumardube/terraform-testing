@@ -3,11 +3,11 @@ output "project_id" {
 }
 
 output "account_name" {
-    value = module.bigquery_svc_account.sa_email
+  value = module.bigquery_svc_account.sa_email
 }
 
 output "dataset_name" {
-  value = var.bigquery_dataset_name
+  value = module.bigquery_svc_account.dataset_id
 }
 
 output "bucket_name" {
