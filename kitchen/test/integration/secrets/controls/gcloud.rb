@@ -1,10 +1,10 @@
-account_name = input('account_name')
+secret_name = input('secret_name')
 project_id = input('project_id')
 
 control "gcloud" do
     title "gcloud configuration"
-  
-    describe command("gcloud compute networks list --project=project_id --format=json") do
+
+    describe command("gcloud secrets describe secret-test --project=my-first-project-298218 --format=json") do
       its(:exit_status) { should eq 0 }
       its(:stderr) { should eq '' }
   
@@ -15,5 +15,16 @@ control "gcloud" do
           {}
         end
       end
+    
+      describe "replication region" do
+        it "should exist" do
+          expect(data['replication']['userManaged']['replicas']).to include(
+            {
+              "location" => "us-east1"
+            }
+          )
+        end
+      end
+
     end
 end
