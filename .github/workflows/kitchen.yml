@@ -36,8 +36,9 @@ jobs:
       # copying service account file to test directory
       - id : copy-json-file
         run : |
-          cp my-first-project-298218-7e25767dcc93.json ./kitchen/test/fixtures/default/
+          cp my-first-project-298218-7e25767dcc93.json ./kitchen/test/fixtures/big_query/
           cp my-first-project-298218-7e25767dcc93.json ./kitchen
+          cp my-first-project-298218-7e25767dcc93.json ./kitchen/test/fixtures/secrets/
       # setup gcloud in the image so that we can use with local controller
       - uses: google-github-actions/setup-gcloud@master
         with:
