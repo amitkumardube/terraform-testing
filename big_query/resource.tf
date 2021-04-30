@@ -27,7 +27,7 @@ resource "google_bigquery_dataset" "dataset" {
 }
 
 resource "google_storage_bucket" "uat_bucket" {
-  name          = var.bucket_name-${random_id.random.hex}
+  name          = "${var.bucket_name}-${random_id.random.hex}"
   location      = "EU"
   force_destroy = true
 
