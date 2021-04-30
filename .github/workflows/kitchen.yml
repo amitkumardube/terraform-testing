@@ -57,25 +57,27 @@ jobs:
         run : |
           cd kitchen
           kitchen destroy
-      # Now calling another workflow from this workflow
-      #- name: Repository Dispatch
-      #  uses: peter-evans/repository-dispatch@v1
-      #  with:
-      #    token: ${{ secrets.PAT }}
-      #    repository: amitkumardube/kitchen-terraform
-      #    event-type: kitchen-terraform
-      #    client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
-      
+
+      # Now calling another workflow from this workflow using repository dispatch github action
+
       - name: Repository Dispatch
-        uses: convictional/trigger-workflow-and-wait@v1.3.0
+        uses: peter-evans/repository-dispatch@v1
         with:
-          owner: amitkumardube
-          repo: kitchen-terraform
-          workflow_file_name: kitchen.yml
-          github_token: ${{ secrets.PAT }}
-          ref: main
-          wait_interval: 10
-          inputs: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
-          propagate_failure: true
-          trigger_workflow: true
-          wait_workflow: true
+          token: ${{ secrets.PAT }}
+          repository: amitkumardube/kitchen-terraform
+          event-type: kitchen-terraform
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+      
+      #- name: Repository Dispatch
+      #  uses: convictional/trigger-workflow-and-wait@v1.3.0
+      #  with:
+      #    owner: amitkumardube
+      #    repo: kitchen-terraform
+      #    workflow_file_name: kitchen.yml
+      #    github_token: ${{ secrets.PAT }}
+      #    ref: main
+      #    wait_interval: 10
+      #    inputs: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+      #    propagate_failure: true
+      #    trigger_workflow: true
+      #    wait_workflow: true
