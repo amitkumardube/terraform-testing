@@ -9,3 +9,7 @@ output "account_name" {
 output "dataset_name" {
   value = var.bigquery_dataset_name
 }
+
+output "bucket_name" {
+  value = module.bigquery_svc_account.bucket_name
+}
