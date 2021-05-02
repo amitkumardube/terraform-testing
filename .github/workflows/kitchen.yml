@@ -23,18 +23,7 @@ jobs:
     env : 
       GOOGLE_APPLICATION_CREDENTIALS: "my-first-project-298218-7e25767dcc93.json"
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-
-      # Now calling another workflow from this workflow using repository dispatch github action
-
-      #- name: Repository Dispatch
-      #  uses: peter-evans/repository-dispatch@v1
-      #  with:
-      #    token: ${{ secrets.PAT }}
-      #    repository: amitkumardube/kitchen-terraform
-      #    event-type: kitchen-terraform
-      #    client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
-      
+    steps:      
       - name: Workflow Dispatch
         uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
