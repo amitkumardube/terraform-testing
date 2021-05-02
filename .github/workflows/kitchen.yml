@@ -74,7 +74,7 @@ jobs:
           owner: amitkumardube
           repo: kitchen-terraform
           workflow_file_name: kitchen.yml
-          #github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.PAT }}
           ref: main
           wait_interval: 10
           inputs: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
