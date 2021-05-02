@@ -6,9 +6,9 @@ name: kitchen
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ release ]
+    branches: [ main ]
   pull_request:
-    branches: [ release ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
           github_token: ${{ secrets.PAT }}
           ref: main
           wait_interval: 10
-          inputs: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          inputs: '{"ref": "${{ github.ref }}", "repo": "${{ github.repository }}"}'
           propagate_failure: true
           trigger_workflow: true
           wait_workflow: true
