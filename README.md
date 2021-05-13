@@ -18,3 +18,4 @@ In this terraform testing guide, we will talk about most popular tools which are
 - The infra is being launched using terraform driver with test variables.
 - The verification is done using inspec.
 - For more detailed documentation - please check readme under kithen folder
+
