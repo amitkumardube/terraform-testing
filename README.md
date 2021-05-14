@@ -1,16 +1,8 @@
 # terraform - testing
 
-In this terraform testing guide, we will talk about most popular tools which are available for testing Terraform code. For the moment, the analysis is done on 2 tools
-- Terratest
-- Test Kitchen with kitchen-terrafrom plugin
+![alt Terraform testing](./Terraform_test_driven_development.jpg)
 
-**Highlights**
-
-**Terratest**
-- This tool using golang testing framework.
-- The test cases are written in golang and tested using go test command.
-- In this guide we have written code to provision test infra and verifying some output variables.
-- For more detailed implementation - please check readme under terratest folder
+The documentation covers Terraform testing using kitchen-terraform and GCP-Inspec.
 
 **Kitchen Terraform Plugin**
 - This plugin is designed to work with tool test kitchen.
