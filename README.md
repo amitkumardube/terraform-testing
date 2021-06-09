@@ -16,6 +16,6 @@ The documentation covers Terraform testing using kitchen-terraform and GCP-Inspe
 **Test Driven development for above terraform code**
 - The code needs to be tested against the sandbox environment before it can be applied.
 - The testing setup is available under https://github.com/amitkumardube/kitchen-terraform
-- The workflow calls the testing workflow which has terraform setup to test the code.
+- The workflow calls the testing workflow which has test cases written to test the code.
 - If testing workflow is successful then this workflow will continue and PR will be merged.
-- If testing workflow fails then process will stop before it can be fixed.
+- If testing workflow fails then this workflow will fail and process will stop.
