@@ -23,8 +23,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
   #  container: amitkuamrdube/kitchen-terraform:latest
-    env : 
-      GOOGLE_APPLICATION_CREDENTIALS: "my-first-project-298218-7e25767dcc93.json"
+  #  env : 
+  #    GOOGLE_APPLICATION_CREDENTIALS: "my-first-project-298218-7e25767dcc93.json"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
       - name: Workflow Dispatch
