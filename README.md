@@ -19,3 +19,4 @@ The documentation covers Terraform testing using kitchen-terraform and GCP-Inspe
 - The workflow calls the testing workflow which has test cases written to test the code.
 - If testing workflow is successful then this workflow will continue and PR will be merged.
 - If testing workflow fails then this workflow will fail and process will stop.
+
